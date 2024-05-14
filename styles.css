@@ -4,6 +4,7 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Nunito', sans-serif;
+    background: #FCF6BD;
 }
 
 #wrap {
@@ -13,17 +14,9 @@ body {
     flex-direction: row;
 }
 
-#sidebar {
-    width: 25%;
-    height: 100%;
-    background-color: #f0f0f0;
-    overflow: hidden;
-}
-
 #main {
-    width: 75%;
+    width: 100%;
     height: 100%;
-    background-color: #f0f0f0;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -74,24 +67,17 @@ body {
     border: 1px solid black;
 }
 
-#sidebar li{
-    list-style-type: none;
-}
-
-#sidebar li a{
-    text-decoration: none;
-    color: black;
-}
 button {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
     padding: 0.5em;
-    border: 0px solid transparent;
-    background-color: rgba(100,77,237,0.08);
+    border: 0 solid transparent;
+    background-color: #A9DEF9;
     border-radius: 1.25em;
     transition: all 0.2s linear;
+    font-weight: bold;
 }
 
 button:hover {
@@ -137,22 +123,100 @@ button:hover {
 }
 
 #steps {
-    width: 75%;
+    width: 100%;
     margin-bottom: 1em;
-    margin-left: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+hr {
+    width: 80%;
+    color: #333333;
 }
 
-.stepMatrixTable tr{
+
+.green-text {
+    color: green;
+}
+#steps > *:not(.elkeszult){
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    animation: slideInFromBottom 0.5s ease-out;
+    background: rgba(255, 255, 255, 0.31);
+    margin: 3px;
+    padding: 5px;
+    border-radius: 3px;
+}
+
+#steps > .elkeszult {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    animation: slideInFromBottom 0.5s ease-out;
+}
+
+.stepMatrixTable {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.stepMatrixTable::before,
+.stepMatrixTable::after {
+    content: "";
+    display: block;
+    width: 0.5em;
+    height: 100%;
+    background-color: transparent;
+    border: 1px solid #333;
+    position: absolute;
+}
+
+.stepMatrixTable::before {
+    left: -0.2em;
+    border-right: none;
+}
+
+.stepMatrixTable::after {
+    right: -0.2em;
+    border-left: none;
+}
+
+.stepMatrixTable {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    table-layout: fixed; /* Add this line */
+}
+
+.stepMatrixTable tr {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-left: 1px solid black;
-    border-right: 1px solid black;
     padding-left: 1px;
     padding-right: 1px;
 }
 
 .stepMatrixTable td {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-align: center;
+    padding: 0.25em;
+}
 
+@keyframes slideInFromBottom {
+    0% {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
