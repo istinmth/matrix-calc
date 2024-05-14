@@ -1,0 +1,17 @@
+{
+  "name": "matrix-calc",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/istinmth/matrix-calc.git"
+  },
+  "private": true,
+  "dependencies": {
+    "fraction-math-js": "^0.2.1"
+  }
+}
